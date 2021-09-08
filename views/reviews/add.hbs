@@ -1,0 +1,27 @@
+<h4>Your Review</h4>
+<div class="row">
+    <form action="/reviews" method="POST" class="col s12">
+    <div class="row">
+        <div class="input-field">
+            <input type="text" id="bookTitle" name="bookTitle">
+            <label for="bookTitle">Book Title</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field">
+            <input type="text" id="bookAuthor" name="bookAuthor">
+            <label for="bookTitle">Book Author</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field">
+            <h6>What's your review:</h6>
+            <textarea id="reviewBody" name="reviewBody"></textarea>
+        </div>
+    </div>
+    <div class="row">
+            <input type="submit" value="Save" class="btn red">
+            <a href="/dashboard" class="btn orange">Cancel</a>
+    </div>
+    </form>
+</div>

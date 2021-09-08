@@ -1,0 +1,39 @@
+<h4>Welcome {{name}}</h4>
+
+{{#if reviews}}
+    <table class="striped">
+        <thead>
+            <tr>
+                <th>
+                    Title
+                </th>
+                <th>
+                    Author
+                </th>
+                <th>
+                    Date
+                </th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {{#each reviews}}
+                <tr>
+                    <td><a href="/reviews/{{_id}}">{{bookTitle}}</a></td>
+                    <td>{{bookAuthor}}</td>
+                    <td>{{formatDate createdAt 'MMMM Do YYYY, h:mm a'}}</td>
+                    <td class="controlBtns">
+                        <button><a href="/reviews/edit/{{_id}}" class="editBtn">Edit</a></button>&nbsp;
+                        <form action="/reviews/{{_id}}" method="POST" id="delete-form">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="deleteBtn red">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+{{else}}
+    <p>You have no reviews</p>
+{{/if}}

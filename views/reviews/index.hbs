@@ -1,0 +1,24 @@
+<h2>Reviews</h2>
+<div class="row">
+    {{#each reviews}}
+        <div class="col s12 m6">
+            <div class="card">
+                
+                <div class="card-content center-align">
+                    <h4>{{bookTitle}}</h4>
+                    <p>{{stripTags (truncate reviewBody 100)}}</p>
+                    <br/>
+                    <div class="chip">
+                        <img src="{{user.image}}" alt="">
+                        <a href="/reviews/user/{{user._id}}">{{user.displayName}}</a>
+                    </div>
+                </div>
+                <div class="card-action centre-align">
+                    <a href="/reviews/{{_id}}" class="btn red">Read More</a>
+                </div>
+            </div>
+        </div>
+    {{else}}
+        <p>No reviews to display</p>
+    {{/each}}
+</div>

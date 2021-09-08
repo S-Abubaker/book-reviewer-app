@@ -1,0 +1,34 @@
+{{#if reviews}}
+    <h4>Reviews by {{name}}</h4>
+
+    <table class="striped">
+        <thead>
+            <tr>
+                <th>
+                    Title
+                </th>
+                <th>
+                    Author
+                </th>
+                <th>
+                    Date
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each reviews}}
+                <tr>
+                    <td>{{bookTitle}}</td>
+                    <td>{{bookAuthor}}</td>
+                    <td>{{formatDate createdAt 'MMMM Do YYYY, h:mm a'}}</td>
+                    <td class="controlBtns">
+                        <button><a href="/reviews/{{_id}}" class="editBtn">Read More</a></button>
+                    </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+{{else}}
+    <p>You have no reviews</p>
+{{/if}}

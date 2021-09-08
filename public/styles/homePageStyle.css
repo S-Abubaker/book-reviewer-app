@@ -1,0 +1,15 @@
+.editBtn {
+    color: black;
+}
+
+.deleteBtn {
+    color: white;
+}
+
+.controlBtns {
+    display: flex;
+}
+
+.img-small {
+    width: 180px;
+}
